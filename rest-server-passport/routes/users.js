@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var User = require('../models/user');
-var verify = require('./verify');
+var Verify = require('./verify');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -32,6 +32,8 @@ router.post('/login', function(req, res, next){
 			});
 		}
 		req.logIn(user, function(err){
+			console.log(user);
+			console.log(err);
 			if(err) {
 				return res.status(500).json({
 					err: 'Couldnt login '

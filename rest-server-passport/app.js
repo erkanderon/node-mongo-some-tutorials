@@ -8,6 +8,8 @@ var mongoose = require('mongoose');
 var passport= require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+mongoose.Promise = global.Promise;
+
 var config = require('./config')
 
 mongoose.connect(config.mongoUrl);
